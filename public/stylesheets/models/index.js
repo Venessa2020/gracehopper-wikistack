@@ -15,19 +15,20 @@ const Page = db.define('page', {
     allowNull: false,
   },
   status: {
-    type: Sequelize.BOOLEAN,
+    type: Sequelize.ENUM('open', 'closed'),
     allowNull: false,
   },
 });
 
 const User = db.define('user', {
-    name: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    });
-    
-module.exports = { db };
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = { Page, User };
