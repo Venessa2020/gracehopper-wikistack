@@ -16,7 +16,7 @@ const Page = db.define('page', {
   },
   status: {
     type: Sequelize.ENUM('open', 'closed'),
-    allowNull: false,
+    defaultValue: 'open',
   },
 });
 
@@ -31,4 +31,4 @@ const User = db.define('user', {
   },
 });
 
-module.exports = { Page, User };
+module.exports = { Page, User, db };
